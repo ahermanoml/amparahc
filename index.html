@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ampara Home Care — Cuidado em casa, Tupaciguara e região</title>
+<meta name="description" content="Cuidadores certificados em casa, na escala que a sua família precisa — de 6 a 24 horas — com avaliação inicial feita por médico ou enfermeiro. Tupaciguara/MG e região.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #0a7ba7;
+    --azul-escuro: #075e80;
+    --rosa: #d61f7f;
+    --rosa-claro: #ef2f92;
+    --rosa-escuro: #b71469;
+    --texto: #17333e;
+    --texto-sec: #44606c;
+    --claro: #cfe8f2;
+    --fundo: #f6f8f9;
+    --borda: #e3ebee;
+    --titulo: 'Bricolage Grotesque', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font-family: 'Nunito Sans', sans-serif; }
+  a { color: var(--azul); text-decoration: none; }
+  a:hover { color: var(--rosa); }
+  img { max-width: 100%; }
+  .container { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  .btn { display: inline-block; background: var(--rosa); color: #fff; border-radius: 999px; font-weight: 700; }
+  .btn:hover { color: #fff; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(246,248,249,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #dde7ea; }
+  .header-inner { padding-top: 14px; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo-text { display: flex; align-items: baseline; gap: 8px; color: var(--azul); }
+  .logo-text .ampara { font-family: var(--titulo); font-weight: 700; font-size: 22px; letter-spacing: 0.12em; }
+  .logo-text .hc { font-size: 12px; letter-spacing: 0.28em; color: var(--rosa); font-weight: 700; }
+  nav { display: flex; gap: 26px; font-size: 15px; font-weight: 600; }
+  .btn-header { padding: 10px 20px; font-size: 14px; }
+  .btn-header:hover { background: var(--rosa-escuro); }
+
+  /* Hero */
+  #inicio { background: var(--azul); color: #fff; overflow: hidden; }
+  .hero-grid { padding-top: 72px; padding-bottom: 80px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+  .hero-copy { animation: fadeUp 0.7s ease both; }
+  .hero-logo { width: 340px; display: block; margin: 0 0 28px -18px; }
+  h1 { font-family: var(--titulo); font-size: 46px; line-height: 1.12; margin: 0 0 18px; font-weight: 700; text-wrap: pretty; }
+  .hero-copy p { font-size: 19px; line-height: 1.6; margin: 0 0 32px; color: var(--claro); max-width: 52ch; text-wrap: pretty; }
+  .btn-hero { padding: 15px 30px; font-size: 17px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+  .btn-hero:hover { background: var(--rosa-claro); }
+  .hero-foto { position: relative; height: 420px; animation: fadeUp 0.7s ease 0.15s both; }
+  .hero-foto-frame { position: absolute; inset: 0; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(4,45,62,0.4); }
+  .hero-foto-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-badge { position: absolute; left: -18px; bottom: -18px; background: #fff; color: var(--texto); border-radius: 16px; padding: 14px 20px; box-shadow: 0 12px 32px rgba(4,45,62,0.3); pointer-events: none; }
+  .hero-badge strong { display: block; font-size: 15px; }
+  .hero-badge span { font-size: 13px; color: #5d7681; }
+
+  /* Seções */
+  section h2 { font-family: var(--titulo); font-size: 34px; margin: 0 0 12px; color: var(--azul); text-wrap: pretty; }
+  .eyebrow { font-size: 13px; letter-spacing: 0.24em; font-weight: 700; color: var(--rosa); margin-bottom: 10px; }
+  .section-head { max-width: 640px; margin-bottom: 44px; }
+  .section-head p { margin: 0; line-height: 1.65; color: var(--texto-sec); font-size: 16px; }
+
+  /* Serviços */
+  #servicos { padding-top: 88px; padding-bottom: 40px; }
+  .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .card { background: #fff; border-radius: 18px; padding: 34px 32px; border: 1px solid var(--borda); box-shadow: 0 4px 16px rgba(10,123,167,0.06); }
+  .badge { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
+  .badge-azul { background: #e2f2f8; color: var(--azul); }
+  .badge-rosa { background: #fbe3ef; color: var(--rosa); }
+  .card h3 { font-family: var(--titulo); font-size: 22px; margin: 0 0 10px; }
+  .card > p { margin: 0 0 18px; line-height: 1.65; color: var(--texto-sec); font-size: 15px; }
+  .checklist { display: grid; gap: 10px; font-size: 15px; }
+  .checklist div { display: flex; gap: 10px; align-items: baseline; }
+  .check-azul { color: var(--azul); font-weight: 700; }
+  .check-rosa { color: var(--rosa); font-weight: 700; }
+  .card-full { margin-top: 22px; }
+  .card-full .intro { max-width: 62ch; margin-bottom: 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chips span { background: #f0f6f8; border: 1px solid #dbe8ec; border-radius: 999px; padding: 8px 16px; font-size: 14px; }
+  .faixa-supervisao { margin-top: 22px; background: #e2f2f8; border: 1px solid #c3e2ee; border-radius: 18px; padding: 24px 32px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .faixa-supervisao .avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--azul); color: #fff; display: grid; place-items: center; font-family: var(--titulo); font-weight: 700; font-size: 20px; flex-shrink: 0; }
+  .faixa-supervisao p { margin: 0; line-height: 1.6; font-size: 15px; flex: 1; min-width: 280px; }
+
+  /* Como funciona */
+  #como-funciona { padding-top: 64px; padding-bottom: 64px; }
+  .bloco-azul { background: var(--azul); border-radius: 28px; padding: 56px 48px; color: #fff; }
+  .bloco-azul h2 { font-size: 30px; color: #fff; margin-bottom: 40px; }
+  .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .passos .num { font-family: var(--titulo); font-size: 44px; font-weight: 700; color: #7fc9e0; margin-bottom: 12px; }
+  .passos h3 { font-size: 18px; margin: 0 0 8px; font-family: var(--titulo); }
+  .passos p { margin: 0; line-height: 1.6; color: var(--claro); font-size: 15px; }
+
+  /* Equipe */
+  #equipe { padding-top: 64px; padding-bottom: 64px; }
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card-pessoa { background: #fff; border-radius: 18px; padding: 28px; border: 1px solid var(--borda); text-align: center; }
+  .card-pessoa img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 18px; display: block; }
+  .card-pessoa h3 { font-family: var(--titulo); font-size: 19px; margin: 0 0 4px; }
+  .card-pessoa .cargo { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .cargo-azul { color: var(--azul); }
+  .cargo-rosa { color: var(--rosa); }
+  .card-pessoa p { margin: 0; line-height: 1.6; color: var(--texto-sec); font-size: 14px; }
+
+  /* FAQ */
+  #faq { max-width: 780px; margin: 0 auto; padding: 64px 24px; }
+  #faq h2 { margin-bottom: 32px; }
+  #faq details { background: #fff; border: 1px solid var(--borda); border-radius: 14px; padding: 20px 24px; margin-bottom: 12px; }
+  #faq summary { cursor: pointer; font-weight: 700; font-size: 16px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  #faq summary::-webkit-details-marker { display: none; }
+  #faq summary .marker { color: var(--rosa); }
+  #faq details[open] summary .marker { display: none; }
+  #faq details p { margin: 14px 0 0; line-height: 1.65; color: var(--texto-sec); font-size: 15px; }
+
+  /* Contato */
+  #contato { padding-top: 40px; padding-bottom: 96px; }
+  .bloco-contato { background: linear-gradient(135deg, #0a7ba7 0%, #075e80 100%); border-radius: 28px; padding: 64px 48px; text-align: center; color: #fff; }
+  .bloco-contato h2 { font-size: 36px; color: #fff; margin-bottom: 14px; }
+  .bloco-contato p { margin: 0 auto 32px; max-width: 54ch; line-height: 1.6; color: var(--claro); font-size: 17px; }
+  .btn-contato { padding: 16px 36px; font-size: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+  .btn-contato:hover { background: var(--rosa-claro); }
+
+  /* Footer */
+  footer { border-top: 1px solid #dde7ea; background: #eef3f5; }
+  .footer-inner { padding-top: 28px; padding-bottom: 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px; color: #5d7681; flex-wrap: wrap; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; padding-top: 48px; padding-bottom: 64px; }
+    .hero-logo { width: 260px; margin-left: 0; }
+    h1 { font-size: 34px; }
+    .hero-foto { height: 320px; }
+    .hero-badge { left: 12px; bottom: -14px; }
+    .cards-2, .cards-3, .passos { grid-template-columns: 1fr; }
+    .bloco-azul, .bloco-contato { padding: 40px 28px; }
+    section h2 { font-size: 28px; }
+    .bloco-contato h2 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="#inicio" class="logo-text"><span class="ampara">AMPARA</span><span class="hc">HOME CARE</span></a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-header wa" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+</header>
+
+<section id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <img class="hero-logo" src="assets/logo-ampara.jpeg" alt="Ampara Home Care">
+      <h1>Cuidado profissional, no lugar onde seu familiar se sente melhor: em casa.</h1>
+      <p>Cuidadores certificados na escala que a sua família precisa — de 6 a 24 horas — com avaliação inicial feita pessoalmente por médico ou enfermeiro. Atendemos Tupaciguara e região.</p>
+      <a class="btn btn-hero wa" href="#" target="_blank" rel="noopener">Conversar agora no WhatsApp</a>
+    </div>
+    <div class="hero-foto">
+      <div class="hero-foto-frame"><img src="assets/hero-visita.jpeg" alt="Profissional de saúde em visita domiciliar com paciente"></div>
+      <div class="hero-badge">
+        <strong>Primeira visita: médico ou enfermeiro</strong>
+        <span>Avaliação completa antes de começar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="container">
+  <div class="section-head">
+    <div class="eyebrow">SERVIÇOS</div>
+    <h2>Dois jeitos de cuidar: contínuo em casa ou pontual, quando precisar</h2>
+  </div>
+  <div class="cards-2">
+    <div class="card">
+      <div class="badge badge-azul">CUIDADO CONTÍNUO EM CASA</div>
+      <h3>Cuidador em casa, na escala que a família precisar</h3>
+      <p>Para quem precisa de cuidado no dia a dia. Começa com uma visita de avaliação em casa, feita por médico ou enfermeiro da coordenação, que monta o plano de cuidado sob medida.</p>
+      <div class="checklist">
+        <div><span class="check-azul">✓</span><span>Escalas de 6, 8, 12 ou 24 horas por dia</span></div>
+        <div><span class="check-azul">✓</span><span>Todos os dias ou só dias de semana — como a família precisar</span></div>
+        <div><span class="check-azul">✓</span><span>Avaliação inicial presencial: médico ou enfermeiro</span></div>
+        <div><span class="check-azul">✓</span><span>Acompanhamento contínuo da evolução do paciente</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="badge badge-rosa">ACOMPANHAMENTO PONTUAL</div>
+      <h3>Cuidador para consultas, exames e internações</h3>
+      <p>Para quando a família não pode acompanhar. Um cuidador certificado leva e acompanha o paciente, sem necessidade de contratar o cuidado contínuo.</p>
+      <div class="checklist">
+        <div><span class="check-rosa">✓</span><span>Acompanhamento em consultas médicas</span></div>
+        <div><span class="check-rosa">✓</span><span>Acompanhamento durante internação na Policlínica</span></div>
+        <div><span class="check-rosa">✓</span><span>Exames — como coleta de sangue — com transporte e retorno</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-full">
+    <div class="badge badge-azul">PROCEDIMENTOS DE ENFERMAGEM AVULSOS</div>
+    <h3>Precisa só de um procedimento? A gente vai até você</h3>
+    <p class="intro">Procedimentos realizados em casa por profissionais de enfermagem, sem necessidade de contratar cuidador. Valores sob consulta pelo WhatsApp.</p>
+    <div class="chips">
+      <span>Banho no leito</span>
+      <span>Banho com auxílio</span>
+      <span>Troca de sonda vesical</span>
+      <span>Troca de sonda nasoenteral / GTT</span>
+      <span>Curativos</span>
+      <span>Medicação intramuscular</span>
+      <span>Medicação endovenosa / soro</span>
+      <span>Aspiração traqueal</span>
+    </div>
+  </div>
+  <div class="faixa-supervisao">
+    <div class="avatar">A</div>
+    <p><strong>Em todos os serviços</strong>, um médico ou enfermeiro da coordenação está a par do caso e gerencia o atendimento — mesmo sem contato direto com o paciente, dá suporte ao cuidador sempre que for preciso.</p>
+  </div>
+</section>
+
+<section id="como-funciona" class="container">
+  <div class="bloco-azul">
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div>
+        <div class="num">1</div>
+        <h3>Você chama no WhatsApp</h3>
+        <p>Conte o que precisa: cuidado no dia a dia, acompanhamento em consulta ou internação, ou um procedimento avulso.</p>
+      </div>
+      <div>
+        <div class="num">2</div>
+        <h3>Avaliação ou agendamento</h3>
+        <p>Cuidado contínuo começa com visita de médico ou enfermeiro em casa. Serviços pontuais são agendados direto, sem burocracia.</p>
+      </div>
+      <div>
+        <div class="num">3</div>
+        <h3>Atendimento com supervisão</h3>
+        <p>Um profissional certificado pela Ampara realiza o serviço — sempre com um médico ou enfermeiro a par do caso, dando suporte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe" class="container">
+  <div class="section-head">
+    <div class="eyebrow">QUEM COORDENA</div>
+    <h2>Três profissionais de saúde à frente de cada cuidado</h2>
+    <p>A Ampara não é uma agência de indicação: quem coordena, visita e responde pelo cuidado são um médico e dois enfermeiros.</p>
+  </div>
+  <div class="cards-3">
+    <div class="card-pessoa">
+      <img src="assets/dr-antonio.jpeg" alt="Dr. Antônio Hermano">
+      <h3>Dr. Antônio Hermano</h3>
+      <div class="cargo cargo-azul">MÉDICO · COORDENADOR</div>
+      <p>Responsável pela avaliação clínica inicial e pelo acompanhamento médico do plano de cuidado.</p>
+    </div>
+    <div class="card-pessoa">
+      <img src="assets/viviane.jpeg" alt="Viviane">
+      <h3>Viviane</h3>
+      <div class="cargo cargo-rosa">ENFERMEIRA · COORDENADORA</div>
+      <p>Enfermeira reconhecida em Tupaciguara pela competência e dedicação no cuidado com pacientes.</p>
+    </div>
+    <div class="card-pessoa">
+      <img src="assets/cristiano.png" alt="Cristiano">
+      <h3>Cristiano</h3>
+      <div class="cargo cargo-azul">ENFERMEIRO · COORDENADOR</div>
+      <p>Enfermeiro com experiência à frente de hotel geriátrico — conhece a rotina do cuidado ao idoso por dentro.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Perguntas frequentes</h2>
+  <details>
+    <summary><span>Como funciona a primeira visita?</span><span class="marker">+</span></summary>
+    <p>A avaliação inicial é feita em casa por um médico ou enfermeiro da coordenação. Avaliamos o estado de saúde do paciente, as necessidades do dia a dia e o ambiente, e apresentamos o plano de cuidado antes de qualquer contratação.</p>
+  </details>
+  <details>
+    <summary><span>Os cuidadores são de confiança?</span><span class="marker">+</span></summary>
+    <p>Todos os cuidadores são selecionados, treinados e certificados pela nossa coordenação — um médico e dois enfermeiros — e seguem sendo supervisionados durante todo o atendimento.</p>
+  </details>
+  <details>
+    <summary><span>Vocês atendem em quais cidades?</span><span class="marker">+</span></summary>
+    <p>Atendemos Tupaciguara/MG e região. Se você está em uma cidade próxima, chame no WhatsApp e verificamos a disponibilidade.</p>
+  </details>
+  <details>
+    <summary><span>Qual o valor do serviço?</span><span class="marker">+</span></summary>
+    <p>Para o cuidado contínuo, o valor depende da necessidade de cada paciente (horas de cuidado, complexidade, escala) — após a visita de avaliação, apresentamos uma proposta personalizada, sem compromisso. Serviços pontuais têm valores informados na hora, pelo WhatsApp.</p>
+  </details>
+  <details>
+    <summary><span>O cuidado é só para idosos?</span><span class="marker">+</span></summary>
+    <p>Não. Atendemos também pacientes em recuperação pós-cirúrgica, pessoas com mobilidade reduzida e outras situações que exijam cuidado em casa.</p>
+  </details>
+</section>
+
+<section id="contato" class="container">
+  <div class="bloco-contato">
+    <h2>Vamos conversar sobre o cuidado do seu familiar?</h2>
+    <p>Sem compromisso: você conta a situação, e agendamos a visita de avaliação ou o atendimento que você precisar. Atendemos Tupaciguara e região.</p>
+    <a class="btn btn-contato wa" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong style="color: var(--azul); letter-spacing: 0.1em; font-family: var(--titulo)">AMPARA</strong> <span style="color: var(--rosa); letter-spacing: 0.2em; font-size: 11px; font-weight: 700">HOME CARE</span></div>
+    <div>Tupaciguara/MG e região · (63) 99275-7021</div>
+  </div>
+</footer>
+
+<script>
+  const waLink = 'https://wa.me/5563992757021?text=' +
+    encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da Ampara Home Care.');
+  document.querySelectorAll('a.wa').forEach(a => { a.href = waLink; });
+</script>
+
+</body>
+</html>
